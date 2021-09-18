@@ -246,12 +246,12 @@ var leca_report_designer_context = function(_leca, _config) {
 			e.data.activeReportTemplate = {};
 			
 			e.data.fields = {};
-			e.data.lines = [];
+			e.data.lines = [];	
 			e.data.headerLines = [];
 			e.data.footerLines = [];
 			e.data.headerFields = [];
-			e.data.footerFields = [];
-			
+			e.data.footerFields = [];			
+			e.data.currentUid = null;
 			/* Switch views */			
 			$("#leca-workspace-report_designer-designer").hide();
 			$("#leca-workspace-report_designer-single").show();			
@@ -2332,8 +2332,11 @@ var leca_report_designer_context = function(_leca, _config) {
 	this.renderSubReport = function(_uid) {
 		
 		let html = '<div class="leca-rd-widget sub_report" data-uid="'+ _uid +'" data-width="'+ this.fields[_uid]["OPTIONS"].width +'" data-type="sub_report" ';
-		html += 'style="grid-area: '+ this.fields[_uid]["OPTIONS"].row_start +'/'+ this.fields[_uid]["OPTIONS"].column_start +'/'+ this.fields[_uid]["OPTIONS"].row_end +'/'+ this.fields[_uid]["OPTIONS"].column_end +'; text-align: center;">';		
-		html += '<div class="subreport-placeholder" style="height: '+ this.gItemHeight +'px;">'+ this.spanifyChar( "[ --- "+ $("#leca-rd-report-list-select option[value="+ this.fields[_uid]["OPTIONS"].report +"]").text() + " --- ]") +'</div>';		
+		html += 'style="grid-area: '+ this.fields[_uid]["OPTIONS"].row_start +'/'+ this.fields[_uid]["OPTIONS"].column_start +'/'+ this.fields[_uid]["OPTIONS"].row_end +'/'+ this.fields[_uid]["OPTIONS"].column_end +'; text-align: center;">';	
+		
+		let report_name = (this.fields[_uid]["OPTIONS"].report != "") ? $("#leca-rd-report-list-select option[value="+ this.fields[_uid]["OPTIONS"].report +"]").text() : "Select a subreport from property section";
+
+		html += '<div class="subreport-placeholder" style="height: '+ this.gItemHeight +'px;">'+ this.spanifyChar( "[ --- "+ report_name + " --- ]") +'</div>';		
 		html += '</div>';	
 		
 		return $(html);
@@ -2943,7 +2946,8 @@ var leca_report_designer_context = function(_leca, _config) {
 		if (this.currentUid && (this.currentUid != _target.attr("data-uid"))) {
 			
 			/* Don't remove edit class for page header or footer */
-			if (this.fields[this.currentUid].target && this.fields[this.currentUid].target.closest(".page_header").length == 0 
+			if (this.fields[this.currentUid] && this.fields[this.currentUid].target 
+				&& this.fields[this.currentUid].target.closest(".page_header").length == 0 
 				&& this.fields[this.currentUid].target.closest(".page_footer").length == 0) {
 				/* Safer side remove the Edit Class */
 				this.fields[this.currentUid].target.removeClass("edit");					
@@ -2960,7 +2964,7 @@ var leca_report_designer_context = function(_leca, _config) {
 			}		
 			
 			/* Also reset the selected column, if it is data grid */
-			if (this.fields[this.currentUid].target.attr("data-type") == "record_table") {
+			if (this.fields[this.currentUid] && this.fields[this.currentUid].target.attr("data-type") == "record_table") {
 				this.selectedColumn = null;
 				this.fields[this.currentUid].target.find("div.dcolumn.selected").removeClass("selected");
 			}
@@ -2984,8 +2988,10 @@ var leca_report_designer_context = function(_leca, _config) {
 		$("#leca-rd-widget-properties-section-label").html(this.rawWidgetList[_target.attr("data-type")]);
 		this.selector.show();	
 		
-		/* Hide the property selector probe message */
-		$("#leca-rd-properties-empty-msg").hide();
+		if (this.currentUid) {
+			/* Hide the property selector probe message */
+			$("#leca-rd-properties-empty-msg").hide();	
+		}		
 	};
 	
 	this.refreshSelector = function(_target) {
