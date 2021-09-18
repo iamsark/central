@@ -1,0 +1,2508 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+nav,
+menu,
+aside,
+figure,
+footer,
+header,
+hgroup,
+article,
+details,
+section,
+figcaption { 
+    display:block;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100vh;
+	padding: 0px;
+	margin: 0px;
+	line-height: 1.5;	
+	font-size: .8125rem;
+    font-weight: 400;            
+    color: #111827;
+    font-family: "Poppins",sans-serif;
+    background-color: #f8f8fb;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;  	
+  	box-sizing: border-box;
+}
+
+ol,
+ul {
+  	padding: 0px;
+  	margin: 0px;
+}
+
+li {
+	list-style: none;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+a, a:visited {
+    color: inherit;
+}
+
+table {
+	width: 100%;
+	border-spacing: 0;
+  	caption-side: bottom;
+  	border-collapse: collapse;
+}
+
+img, video {
+    max-width: 100%;
+}
+
+img {
+    border-style: none;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  	margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  	-moz-appearance: textfield;
+}
+
+::-moz-selection {
+	background-color: #b3d4fc; /* 1 */
+	color: #000000; /* 1 */
+	text-shadow: none;
+}
+
+::selection {
+	background-color: #b3d4fc; /* 1 */
+	color: #000000; /* 1 */
+	text-shadow: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;    
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: lightgrey;
+  outline: 1px solid lightgrey;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+select:focus-visible,
+input:focus-visible {
+  outline: 1px solid #3B82F6;
+}
+
+div.leca-master-container {
+	width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+header.leca-top-section {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    position: fixed;
+}
+
+div.leca-top-header,
+div.leca-top-content {
+	width: 280px;
+    height: 60px;
+    float: left;
+    position: relative;
+    padding: 0 24px;
+    border-right: solid 1px #E5E7EB;
+    transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+div.leca-top-content {	
+    background: #fff;
+    padding: 0px !important;
+    width: calc(100% - 68px);
+    border-bottom: solid 1px #F3F4F6;    
+}
+
+div.leca-header-area {
+	display: flex;
+}
+
+div.leca-header-area > div {
+	width: 50%;
+	height: 60px;
+	float: left; 
+	display: flex;
+	align-items: center;
+}
+
+#leca-top-action-bar {
+	padding-right: 5px;
+	justify-content: flex-end;
+}
+
+#leca-header-breadcrumb {
+	display: flex;
+	padding: 17px;    
+    color: #3B82F6;
+    font-size: 13px;
+    align-items: center;
+}
+
+#leca-header-breadcrumb i {
+	margin-right: 8px;
+}
+
+#leca-header-breadcrumb label {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#leca-header-breadcrumb span {
+	
+}
+
+div.leca-main-sidbar {
+	position: fixed;
+    top: 60px;
+    left: 0px;
+    width: 68px;
+    z-index: 999999;
+    background-color: #fff;    
+    height: calc(100% - 55px);
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    /*box-shadow: 1px 0 20px rgb(0 0 0 / 10%);*/
+    border-right: solid 1px #E5E7EB;
+    transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+div.leca-master-container.expanded div.leca-main-sidbar {
+    width: 280px;
+    overflow: auto;
+}
+
+div.leca-master-container.expanded div.leca-top-header {
+    width: 280px;
+}
+
+header.leca-top-section div.leca-top-header {
+    width: 68px;
+    background: #fff;
+}
+
+div.leca-master-container.expanded div.leca-top-content {
+    width: calc(100% - 280px);
+}
+
+ul.leca-header-brand-ul li {
+    float: left;
+}
+
+ul.leca-header-brand-ul li.logo {
+    width: 32px;
+    padding-top: 16px;
+    display: none !important;
+}
+
+ul.leca-header-brand-ul li.brand {
+    color: #3B82F6;
+    font-size: 18px;
+    padding-top: 17px;
+    padding-left: 0px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: none;
+}
+
+div.leca-master-container.expanded ul.leca-header-brand-ul li.logo,
+div.leca-master-container.expanded ul.leca-header-brand-ul li.brand {
+	display: block;
+}
+
+ul.leca-header-brand-ul li.toggle {
+    top: 15px;
+    right: 19px;
+    z-index: 1001;
+    position: absolute;
+}
+
+ul.leca-header-brand-ul li.toggle a {
+    display: block;
+    color: #111827;
+}
+
+ul.leca-header-brand-ul li.toggle a i {
+	font-size: 30px;
+}
+
+#leca-primary-navigation {
+    margin-top: 10px;
+    transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#leca-primary-navigation a {
+    color: #111827;
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    display: block;
+    padding: 0 12px 0 19px;
+    border-left: solid 5px transparent;
+}
+
+#leca-primary-navigation a label {
+	display: none;
+}
+
+div.leca-master-container.expanded #leca-primary-navigation a label {
+	display: block;
+}
+
+#leca-primary-navigation a i {
+    float: left;
+    color: #3B82F6;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+#leca-primary-navigation a label {
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+#leca-primary-navigation a:hover,
+#leca-primary-navigation a.selected {	
+	border-left-color: #3B82F6;
+	background: rgba(255, 255, 255, 0.05);
+}
+
+ul.submenu li a i.leoc-menu-sub-icon, #leca-primary-navigation li a.leoc-has-drop-down i:last-child {
+    float: right;
+    margin-left: 12px;
+}
+
+div.leca-main-content {
+	height: 100vh;
+	width: calc(100% - 60px);
+    min-height: 100vh;
+    float: right;
+    flex: 1 1 auto;
+    display: flex;
+    margin-left: 68px;
+    padding-top: 60px;
+    flex-direction: column;    
+}
+
+div.leca-master-container.expanded div.leca-main-content {
+    width: calc(100% - 280px);
+    margin-left: 280px;
+}
+
+#leca-workspace-context {
+	
+}
+
+#leca-workspace-context > div,
+#leca-workspace-context > div > div {
+	display: none;
+}
+
+
+/* Report designer style starts here */
+
+#leca-workspace-report-designer {
+
+}
+
+#leca-workspace-report-designer a {
+	color: #3B82F6;
+	text-decoration: none;
+}
+
+#leca-workspace-report-designer table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+button, input {
+    overflow: visible;
+}
+
+.disabled {
+	opacity: .5;
+	pointer-events: none;
+	-webkit-user-select: none;
+  	   -moz-user-select: none;
+  	    -ms-user-select: none;
+  	        user-select: none;
+}
+
+#leca-rd-context-menu-box {
+	width: 180px;
+    z-index: 10000;
+    font-size: 13px;
+    background: #fff;
+    padding: 3px 0px;
+    position: absolute;
+    border: 1px solid rgba(0,0,0,.15);
+    -webkit-box-shadow: 3px 3px 0px rgba(0,0,0,.1);
+       -moz-box-shadow: 3px 3px 0px rgba(0,0,0,.1);
+        -ms-box-shadow: 3px 3px 0px rgba(0,0,0,.1);
+         -o-box-shadow: 3px 3px 0px rgba(0,0,0,.1);
+            box-shadow: 3px 3px 0px rgba(0,0,0,.1);
+}
+
+#leca-rd-context-menu-box a {
+	color: #888;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    line-height: 23px;
+    text-decoration: none;
+}
+
+#leca-rd-context-menu-box a i {
+	color: #3B82F6;
+	display: flex;
+	margin-right: 5px;
+    font-size: 18px;
+    align-items: center;
+}
+
+#leca-rd-context-menu-box a:hover {
+	color: #fff;
+    background: #0085CA;
+}
+
+div.leca-rd-wrapper {
+	
+}
+
+div.leca-rd-designer-section {
+	
+}
+
+div.leca-rd-container {
+	display: grid;	
+	overflow: hidden;
+	height: calc(100vh - 70px);
+	grid-template-columns: 1fr 4fr 1fr;
+}
+
+div.leca-rd-sidebar-panel {
+	width: auto;
+	height: calc(100vh - 45px);
+    position: sticky;    
+    background: #fff;
+}
+
+div.leca-rd-sidebar-panel.left {
+	border-right: solid 1px #ddd;
+}
+
+div.leca-rd-sidebar-panel.right {
+	border-left: solid 1px #ddd;
+}
+
+div.leca-rd-sidebar-panel.left div.leca-rd-sidebar-tab-header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+div.leca-rd-sidebar-panel.right div.leca-rd-sidebar-tab-header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+div.leca-rd-sidebar-tab-item {
+	
+}
+
+div.leca-rd-sidebar-tab-item a,
+div.leca-rd-properties-section-header {
+	height: 40px;
+	color: #778899;
+	display: block;
+	font-size: 14px;
+	text-align: center;
+    line-height: 40px;
+    user-select: none;
+	border: 1px solid transparent;
+	border-color: #fff #dee2e6 #dee2e6 #fff;
+}
+
+div.leca-rd-sidebar-tab-item a,
+div.leca-rd-properties-section-header {
+    display: flex;    
+    justify-content: center;
+}
+
+div.leca-rd-sidebar-tab-item:last-child a {
+	border-color: #fff #fff #dee2e6 #fff;
+}
+
+div.leca-rd-properties-section-header {
+	color: #4684EE;
+	text-align: left;
+	padding-left: 12px;
+	border-right: none;
+}
+
+div.leca-rd-sidebar-tab-item a span {
+
+}
+
+div.leca-rd-sidebar-tab-item a:hover {
+	color: #4684EE;
+}
+
+div.leca-rd-sidebar-tab-item a.selected {
+	color: #4684EE;
+	border-color: #fff #dee2e6 #fff #fff;
+}
+
+div.leca-rd-sidebar-tab-item:last-child a.selected {
+	border-right: none;
+}
+
+div.leca-tab-content {
+	position: relative;	
+}
+
+div.leca-tab-content > div {
+	display: none;
+}
+
+#leca-rd-widget-list {
+	padding: 0px;
+	display: grid;
+	list-style: none;
+	margin: 18px;
+	grid-gap: 18px;
+	grid-template-columns: 1fr 1fr;
+}
+
+#leca-rd-widget-list > a {    
+	padding: 12px;
+    display: block;
+	font-size: 12px;    
+	color: #73879C;
+    text-align: center;    
+    -webkit-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+       -moz-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+        -ms-box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);  
+}
+
+#leca-rd-widget-list a span {
+	display: block;
+	margin-top: 5px;
+}
+
+#leca-rd-widget-list a i {
+	font-size: 22px;
+}
+
+div.leca-accordian-container {
+	font-size: 12px;
+	border-bottom: solid 1px #ddd;
+}
+
+div.leca-accordian-header {
+	height: 45px;
+	color: #4684EE;
+	cursor: pointer;
+	line-height: 42px;
+	padding: 0px 12px;
+	user-select: none;
+}
+
+div.leca-accordian-header i.icon {
+	
+}
+
+div.leca-accordian-header i.arrow {
+	float: right;
+    margin-top: 15px;
+}
+
+div.leca-accordian-header span {
+	
+}
+
+div.leca-accordian-header.active {
+	
+}
+
+div.leca-accordian-content {
+	display: none;
+	font-size: 12px;
+    margin-top: -12px;
+    padding: 0px 2px 20px;
+}
+
+table.leca-unit-table-container,
+table.leca-unit-table-container td {
+	width: 100%;
+}
+
+table.leca-unit-table-container.two td {
+	width: 50%;
+}
+
+table.leca-unit-table-container td {
+	padding: 15px 10px 0px;
+}
+
+div.form-row > label {
+	display: block;
+}
+
+div.form-row table.leca-unit-table-container {
+	margin-top: -15px;
+}
+
+div.form-row table.leca-unit-table-container.two td:first-child {
+	padding-left: 0px !important;
+}
+
+div.form-row table.leca-unit-table-container.two td:last-child {
+	padding-right: 0px !important;
+}
+
+#leca-rd-sidebar-properties-panel div.form-row > label, 
+div.leca-rd-report-setup-container div.form-row > label {
+	color: #4684EE;
+	font-weight: bold;
+}
+
+div.leca-rd-unit-field.selector {
+	padding: 1px;
+	display: grid;	    
+    grid-gap: 1px;    
+    background: #3B82F6;
+    border-radius: 5px;
+}
+
+div.leca-rd-unit-field.selector.four {
+	grid-template-columns: repeat(4, 1fr);
+}
+
+div.leca-rd-unit-field.selector.five {
+	grid-template-columns: repeat(5, 1fr);
+}
+
+div.leca-rd-unit-field.selector > label {
+	padding: 5px;   
+	color: #73879C;
+	font-size: 12px;
+	cursor: pointer;
+    line-height: 1.5;
+	font-weight: 400;	   
+    text-align: center;
+    position: relative;
+	display: inline-block;    
+    vertical-align: middle;    
+    background-color: #fff;   
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+div.leca-rd-unit-field.selector > label.selected {
+	color: #fff;
+	background: #4684EE;
+}
+
+div.leca-rd-unit-field.selector > label:first-child {
+	border-radius: 5px 0px 0px 5px;
+}
+
+div.leca-rd-unit-field.selector > label:last-child {
+	border-radius: 0px 5px 5px 0px;
+}
+
+div.leca-rd-unit-field.selector > label > input {
+	position: absolute;
+    clip: rect(0, 0, 0, 0);
+}
+
+div.leca-rd-unit-field.selector > label i {
+	font-size: 18px;
+}
+
+div.leca-report-template-model-content select,
+#leca-workspace-report_designer-designer select,
+#leca-workspace-report_designer-designer input[type=text],
+div.leca-report-template-model-content input[type=text], 
+#leca-workspace-report_designer-designer input[type=email],
+div.leca-report-template-model-content input[type=email],  
+#leca-workspace-report_designer-designer input[type=number],
+div.leca-report-template-model-content  input[type=number] {
+	width: 100%;
+	height: 28px;
+	color: #495057;
+	font-size: 13px;
+	padding: 0px 5px;
+	font-weight: 400;
+    line-height: 1.5;    
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+div.leca-accordian-content input[type=color],
+div.leca-rd-report-setup-container input[type=color] {
+	width: 100%;
+	height: 28px;
+}
+
+#leca-rd-sidebar-properties-panel,
+div.leca-rd-report-setup-container {
+	font-size: 12px;
+	padding: 0px 18px;
+}
+
+div.leca-rd-report-setup-container > hr {
+	margin: 20px 0px 0px;
+    border-top: solid 2px #778899;
+}
+
+div.form-row {
+	margin-top: 12px;
+}
+
+div.leca-rd-lpi-form-row input {
+	display: none;
+	margin-top: 10px;
+}
+
+div.leca-rd-designer-pad-header {
+	width: 100%;
+	display: table;
+	background: #fff;  
+	border-bottom: solid 1px #3B82F6; 
+}
+
+div.leca-rd-designer-pad-header a {
+	float: left;
+	height: 40px;
+	color: #778899;  
+	font-size: 14px;
+	user-select: none; 
+	line-height: 40px;
+    padding: 0px 15px;
+    margin-bottom: -1px;
+    border-bottom: solid 1px #3B82F6;
+}
+
+div.leca-rd-sidebar-tab-item a i,
+div.leca-rd-designer-pad-header a i {
+	font-size: 18px;
+    float: left;
+    margin-top: 11px;
+    margin-right: 5px;
+}
+
+div.leca-rd-designer-pad-header a.selected {
+	color: #fff !important;
+    background: #3B82F6;
+    border-bottom-color: #3B82F6;
+}
+
+div.leca-rd-designer-pad-content {
+	padding: 15px;
+	overflow-y: auto;
+    overflow-x: hidden;
+	height: calc(100vh - 100px);
+}
+
+#leca-rd-designer-design-view {	
+	height: 100%;
+	position: relative;
+}
+
+#leca-rd-ruller-wrapper {
+	width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+
+#leca-rd-designer-design-pad,
+#leca-rd-designer-repeater-pad {
+	display: grid;
+	font-size: 1em;
+	background: #fff;
+	font-family: "Times New Roman", Times, serif;
+	-webkit-box-shadow: 0px 0px 5px #ddd;
+	   -moz-box-shadow: 0px 0px 5px #ddd;
+	    -ms-box-shadow: 0px 0px 5px #ddd;
+	        box-shadow: 0px 0px 5px #ddd;
+}
+
+#leca-rd-designer-repeater-pad {
+	margin-top: 25px
+}
+
+div.leca-rd-widget {
+	background: whitesmoke;
+	overflow: hidden;
+}
+
+div.leca-rd-widget span {
+	font-size: 14px;
+}
+
+div.leca-rd-widget.page_header,
+div.leca-rd-widget.page_footer {
+	background: transparent;
+	border: dashed 1px lightblue;
+}
+
+div.leca-rd-widget.page_header > div,
+div.leca-rd-widget.page_footer > div {
+	height: 100%;
+}
+
+div.page-header-widgets-holder,
+div.page-footer-widgets-holder {
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);    
+}
+
+div.leca-rd-widget.dynamic_text span,
+div.leca-rd-widget.static_text > span,
+div.leca-rd-widget.page_number span,
+div.leca-rd-widget.record_table div.line > span,
+div.leca-rd-widget.record_table div.content > span,
+div.leca-rd-widget.record_table div.drow > div.dcolumn > span {
+	color: #777;
+	user-select: none;
+	text-align: center;
+	display: inline-grid;
+	vertical-align: bottom;
+}
+
+div.leca-rd-widget.page_number > div,
+div.leca-rd-widget.dynamic_text > div {
+	user-select: none;
+}
+
+
+div.leca-rd-widget.page_number.resize > div.label,
+div.leca-rd-widget.page_number.resize > div.value,
+div.leca-rd-widget.dynamic_text.resize > div.label,
+div.leca-rd-widget.dynamic_text.resize > div.value,
+div.leca-rd-widget.page_number.resize > div.label span,
+div.leca-rd-widget.dynamic_text.resize > div.label span {
+	pointer-events: none;
+}
+
+div.leca-rd-widget.page_number > div.active,
+div.leca-rd-widget.dynamic_text > div.active {	
+	background: rgba(66, 133, 244, 0.2);
+}
+
+div.leca-rd-widget.page_number.resize div.delimiter,
+div.leca-rd-widget.dynamic_text.resize div.delimiter {
+	font-weight: bold;
+	border-left: solid 1px #ccc;
+	border-right: solid 1px #ccc;
+}
+
+div.leca-rd-widget * {
+	user-select: none;
+	pointer-events: none;
+}
+
+div.leca-rd-widget.edit * {
+	user-select: auto;
+	pointer-events: auto;
+}
+
+div.leca-rd-widget.page_break {
+	text-align: center;
+}
+
+div.leca-sidebar-tab-content {
+	overflow: auto;
+	height: inherit;
+	padding-bottom: 50px;
+}
+
+div.leca-sidebar-tab-content::-webkit-scrollbar,
+#leca-rd-designer-design-view::-webkit-scrollbar {
+	
+}
+
+div.leca-rd-designer-pad-content::-webkit-scrollbar {
+	width: 0px;
+}
+
+div.leca-sidebar-tab-content::-webkit-scrollbar-track,
+#leca-rd-designer-design-view::-webkit-scrollbar-track {
+  	-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+div.leca-sidebar-tab-content::-webkit-scrollbar-thumb,
+#leca-rd-designer-design-view::-webkit-scrollbar-thumb {
+  	background-color: rgba(0, 0, 0, 0.15);
+    outline: 1px solid slategrey; 
+}
+
+div.leca-rd-selector-layer {
+	overflow: hidden;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+#leca-rd-selector-bar,
+#leca-rd-highlight-bar {
+	display: none;
+	position: absolute;
+	border: 1px solid #4285f4;    
+}
+
+#leca-rd-selector-bar {
+	background: rgba(66, 133, 244, 0.1);
+}
+
+#leca-rd-selector-bar.edit {
+	background: transparent;
+}
+
+#leca-rd-selector-widget-name,
+#leca-rd-highlight-widget-name {
+	top: -25px;
+    left: -1px;
+    width: auto;
+    color: #fff;
+    font-size: 12px;
+    padding: 5px;
+    height: 25px;
+    line-height: 16px;
+    position: relative;
+	background: #4285f4;    
+    display: inline-block;
+    border-radius: 3px 3px 0px 0px;
+}
+
+#leca-rd-selector-actions {
+    top: -25px;
+    right: -1px;
+    height: 25px;
+    padding: 3px;
+    color: #fff;
+    display: flex;    
+    position: absolute;
+    background: #4285f4;
+    border-radius: 3px 3px 0px 0px;
+}
+
+#leca-rd-selector-actions > a {
+    color: #fff;    
+    padding: 5px;
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    pointer-events: auto;
+}
+
+#leca-rd-selector-actions > a:hover,
+#leca-rd-selector-actions > a.active {
+	background: #1266f1;
+}
+
+#leca-rd-selector-actions > a i {
+	font-size: 14px;
+}
+
+#leca-rd-sidebar-properties-panel > div {
+	display: none;	
+}
+
+div.form-row p.desc {
+	color: #ccc;
+}
+
+#leca-rd-widget-page_footer-properties div.form-row p.desc,
+#leca-rd-widget-page_header-properties div.form-row p.desc {
+	text-align: center;
+}
+
+label.leca-rd-check-wrapper {
+	user-select: none;
+    cursor: pointer;
+	color: #7b7c7f !important;
+    font-weight: normal !important;
+    margin-bottom: 10px !important;
+}
+
+#leca-rd-properties-empty-msg h3,
+#leca-rd-field-list-empty-msg h3,
+#leca-rd-widget-page_break-properties h3 {
+	color: #ccc;
+    font-size: 15px;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+div.leca-rd-widget.page_number,
+div.leca-rd-widget.dynamic_text {
+	display: flex;
+}
+
+div.leca-rd-widget.dynamic_text > div.value {
+	flex: 1;
+}
+
+div.leca-rd-widget.page_number.edit > div.delimiter:hover,
+div.leca-rd-widget.dynamic_text.edit > div.delimiter:hover {
+	cursor: col-resize;
+}
+
+div.leca-rd-widget.dynamic_text.resize > div.label,
+div.leca-rd-widget.dynamic_text.resize > div.value,
+div.leca-rd-widget.record_table div.drow > div.dcolumn.mute {
+	pointer-events: none;
+}
+
+div.leca-rd-widget.record_table {
+	
+}
+
+div.leca-rd-widget.record_table div.drow {
+	display: flex;
+	position: relative;
+}
+
+div.leca-rd-widget.record_table div.drow:hover {
+	background: #ddd;
+}
+
+div.leca-rd-widget.record_table div.drow > div.dcolumn {
+	overflow: hidden;
+	user-select: none;
+	border: dashed 1px transparent;
+}
+
+div.leca-rd-widget.record_table div.drow > div.dcolumn:hover {
+	border-color: #777;
+}
+
+div.leca-rd-widget.record_table div.drow > div.dcolumn > span {
+	cursor: pointer;
+}
+
+div.leca-rd-widget.record_table div.drow > div.dcolumn.selected {
+	color: #fff;
+	background: #4285f4;
+	border-color: transparent;
+}
+
+div.leca-rd-widget.record_table div.drow > div.dcolumn.selected span {
+	color: #fff;
+}
+
+div.leca-rd-widget.record_table div.drow > span.resize-handle {
+	top: 0px;
+	bottom: 0px;
+	width: 5px;
+	cursor: col-resize;
+	position: absolute;
+    border: solid 2px transparent;
+}
+
+div.leca-rd-widget.record_table div.drow:hover > span.resize-handle {
+	border-color: #bbb;
+}
+
+#leca-rd-designer-design-pad.panning > div,
+#leca-rd-designer-design-pad.panning > div * {
+	pointer-events: none;
+}
+
+div.leca-rd-widget div.line {
+	white-space: nowrap;
+}
+
+select.leca-report-template-selector {
+	height: 34px;
+	padding: 0px 10px;    
+    margin-right: 5px;
+    display: inline-block;
+    border: solid 1px #ccc;
+}
+
+#leca-rd-designer-preview-iframe body::-webkit-scrollbar {
+  width: 5px;
+}
+
+#leca-rd-designer-data-view > pre {
+	margin-top: 0px;
+}
+
+#leca-rd-designer-data-blue-print {
+	width: 100%;
+	padding: 1em;
+	color: #BC6060;
+	display: block;
+	background: #fff;
+    overflow-y: auto;
+    overflow-x: hidden;    
+}
+
+/* Report designer style ends here */
+
+/* SystemGrid style starts here */
+
+.leca-data-grid {
+	background: #fff;
+	position: relative;
+	padding: 5px 15px 0px;
+}
+
+.leca-data-grid .leca-data-grid-content {
+	margin-top: 1px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 300px;
+	position: relative;
+}
+
+.leca-data-grid .leca-data-grid-page.full,
+.leca-data-grid .leca-data-grid-header.full {
+	width: 100%;
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.leca-data-grid .leca-data-grid-page.auto,
+.leca-data-grid .leca-data-grid-header.auto {
+	display: table;
+    border-spacing: 0;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+.leca-data-grid .leca-data-grid-row {
+	width:auto;
+  	clear:both;
+  	display:table-row;
+}
+
+.leca-data-grid-row:nth-child(odd) {
+    background-color: #fff;
+}
+
+.leca-data-grid-row:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+.leca-data-grid .leca-data-grid-cell {
+	height:25px;
+	color: #333;
+	font-size: 14px;
+	overflow: hidden;	
+	padding: 0px 10px;	
+	position:relative;
+	white-space:nowrap;	
+	display:table-cell;   
+	vertical-align: middle;
+}
+
+.leca-data-grid .leca-data-grid-cell a {
+	color: #0085CA;
+}
+
+.leca-data-grid .leca-data-grid-header .leca-data-grid-cell span {
+	font-weight: bold;	
+}
+
+.leca-data-grid .leca-data-grid-header .leca-data-grid-cell {
+	padding-top: 12px;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #3B82F6;
+}
+
+.leca-data-grid .leca-data-grid-content .leca-data-grid-cell {
+	padding: 12px 10px;
+}
+#leca-dbexplorer-data-query-view .leca-data-grid-content .leca-data-grid-cell,
+#leca-dbexplorer-data-record-view .leca-data-grid-content .leca-data-grid-cell {
+	padding: 6px 10px;
+}
+
+.leca-data-grid-content .leca-data-grid-row:first-child .leca-data-grid-cell {
+	border-top: none;
+}
+
+.leca-data-grid .leca-data-grid-header span.leca-grid-header-icon {
+	float: right;
+}
+
+.leca-data-grid-cell.leca-grid-searchable:hover,
+.leca-data-grid-cell.leca-grid-filterable:hover {
+	background: #eee;
+}
+
+.leca-data-grid-cell.leca-grid-filterable:hover span.leca-grid-header-icon,
+.leca-data-grid-cell.leca-grid-searchable:hover span.leca-grid-header-icon {
+	
+}
+
+.leca-data-grid h3.leca-empty-message {
+	
+}
+
+.leca-data-grid h3.leca-loading-message {
+	color: #bbb;
+	margin: 0px;
+	height: 100px;
+    line-height: 95px;
+    text-align: center;    
+    -webkit-text-shadow: 0px 1px 2px #bbb;
+       -moz-text-shadow: 0px 1px 2px #bbb;
+        -ms-text-shadow: 0px 1px 2px #bbb;
+         -o-text-shadow: 0px 1px 2px #bbb;
+            text-shadow: 0px 1px 2px #bbb;
+}
+
+h1.leca-empty-record-msg {
+	color: #bbb;
+	height: 150px;
+    font-size: 16px;	
+    line-height: 150px;
+    text-align: center;    
+    -webkit-text-shadow: 0px 1px 1px #aaa;
+       -moz-text-shadow: 0px 1px 1px #aaa;
+        -ms-text-shadow: 0px 1px 1px #aaa;
+         -o-text-shadow: 0px 1px 1px #aaa;
+            text-shadow: 0px 1px 1px #aaa;
+}
+
+/* SystemGrid style ends here */
+
+label.leca-toggle-switch,
+label.leca-grid-toggle-switch {
+	width: 85px;
+    height: 25px;
+    cursor: pointer;
+    padding: 3px 1px;
+	position: relative;
+	vertical-align: top;
+    display: inline-block;    
+    background-color: white;
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+         -o-border-radius: 2px;
+            border-radius: 2px;
+    background-image: -webkit-linear-gradient(top, #eeeeee, white 25px);
+    background-image: -moz-linear-gradient(top, #eeeeee, white 25px);
+    background-image: -o-linear-gradient(top, #eeeeee, white 25px);
+    background-image: linear-gradient(to bottom, #eeeeee, white 25px);    
+    -webkit-box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);  
+       -moz-box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);  
+        -ms-box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);  
+         -o-box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);  
+            box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);    
+}
+
+label.leca-grid-toggle-switch {
+	width: 65px;	
+}
+
+label.leca-toggle-switch input[type=checkbox] {
+	display: none;
+}
+
+label.leca-toggle-switch span.leca-toggle-label,
+label.leca-grid-toggle-switch span.leca-toggle-label {
+	position: relative;
+    display: block;
+    height: inherit;
+    font-size: 11px;
+    margin-top: -2px;
+    text-transform: uppercase;
+    background: #eceeef;
+    -webkit-border-radius: inherit;
+       -moz-border-radius: inherit;
+        -ms-border-radius: inherit;
+         -o-border-radius: inherit;
+            border-radius: inherit;
+    -webkit-transition: 0.15s ease-out;
+       -moz-transition: 0.15s ease-out;
+        -ms-transition: 0.15s ease-out;
+         -o-transition: 0.15s ease-out;
+            transition: 0.15s ease-out;
+    -webkit-transition-property: opacity background;
+       -moz-transition-property: opacity background;
+        -ms-transition-property: opacity background;
+         -o-transition-property: opacity background;
+            transition-property: opacity background;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+	   -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+	    -ms-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+	     -o-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+	        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+label.leca-toggle-switch span.leca-toggle-label::before,
+label.leca-toggle-switch span.leca-toggle-label::after,
+label.leca-grid-toggle-switch span.leca-toggle-label::before,
+label.leca-grid-toggle-switch span.leca-toggle-label::after  {
+	display: block;
+	line-height: 27px;
+	position: absolute;
+}
+
+label.leca-toggle-switch span.leca-toggle-label::before,
+label.leca-grid-toggle-switch span.leca-toggle-label::before {
+    right: 11px;
+    color: #aaa;
+    text-align: right;
+    white-space: nowrap;
+    content: attr(data-off);    
+    text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+
+label.leca-toggle-switch span.leca-toggle-label::after,
+label.leca-grid-toggle-switch span.leca-toggle-label::after {
+	left: 11px;
+	opacity: 0;
+    color: #fff;
+    text-align: left;
+    white-space: nowrap;
+	content: attr(data-on);
+    -webkit-text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+       -moz-text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+        -ms-text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+         -o-text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+}
+
+label.leca-toggle-switch span.leca-toggle-handle,
+label.leca-grid-toggle-switch span.leca-toggle-handle {
+	position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 19px;
+    height: 19px;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    background-image: -webkit-linear-gradient(top, white 40%, #f0f0f0);
+    background-image: -moz-linear-gradient(top, white 40%, #f0f0f0);
+    background-image: -o-linear-gradient(top, white 40%, #f0f0f0);
+    background-image: linear-gradient(to bottom, white 40%, #f0f0f0);
+    -webkit-transition: left 0.15s ease-out;
+       -moz-transition: left 0.15s ease-out;
+         -o-transition: left 0.15s ease-out;
+            transition: left 0.15s ease-out;
+}
+
+label.leca-toggle-switch.on span.leca-toggle-handle,
+label.leca-grid-toggle-switch.on span.leca-toggle-handle {
+    left: 62px;
+    -webkit-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+        -ms-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+         -o-box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+label.leca-grid-toggle-switch.on span.leca-toggle-handle {
+	left: 42px;
+}
+
+label.leca-toggle-switch.on span.leca-toggle-label::before,
+label.leca-grid-toggle-switch.on span.leca-toggle-label::before {
+	opacity: 0;
+}
+
+label.leca-toggle-switch.on span.leca-toggle-label::after,
+label.leca-grid-toggle-switch.on span.leca-toggle-label::after {
+	opacity: 1;
+}
+
+label.leca-toggle-switch.on span.leca-toggle-label,
+label.leca-grid-toggle-switch.on span.leca-toggle-label, 
+label.leca-toggle-switch.leca-menu-switch-alert  span.leca-toggle-label {
+	background: #0085CA;
+}
+
+.leca-role-menu-config-ul .leca-menu-access-bar {
+	top: 7px;
+	right: 5px;
+	position: absolute;   
+}
+
+.leca-role-menu-config-ul label.leca-toggle-switch {
+	float: left;
+	width: 55px;
+	height: 20px;
+	margin-left: 5px;
+}
+
+.leca-role-menu-config-ul label.leca-toggle-switch span.leca-toggle-label::before,
+.leca-role-menu-config-ul label.leca-toggle-switch span.leca-toggle-label::after {
+	line-height: 22px;
+}
+	
+.leca-role-menu-config-ul label.leca-toggle-switch span.leca-toggle-handle {
+	top: 3px;
+	left: 3px;
+	height: 15px;
+}
+
+.leca-role-menu-config-ul li ul li label.leca-toggle-switch span.leca-toggle-handle {
+	top: 4px;
+}
+
+.leca-role-menu-config-ul label.leca-toggle-switch.on span.leca-toggle-handle {
+    left: 32px;
+}
+
+label.leca-toggle-switch.disable {
+	opacity: .5;
+}
+
+#leca-system-loading-notification {
+	top: 14px;
+    left: 38.5%;
+    color: #222;
+	display: none;
+	font-size: 13px;
+    padding: 5px 30px;
+    position: absolute;    
+    background: #fcf5d9;   
+    font-weight: bold; 
+    border: solid 1px #e8c48c;
+    -webkit-border-radius: 2px;
+       -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+         -o-border-radius: 2px;
+            border-radius: 2px;
+    -webkit-box-shadow: 0 0 2px #888;
+       -moz-box-shadow: 0 0 2px #888;
+        -ms-box-shadow: 0 0 2px #888;
+         -o-box-shadow: 0 0 2px #888;
+            box-shadow: 0 0 2px #888;
+}
+
+#leca-system-global-notification {
+	left: 0;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    height: 86px;
+    display: none;    
+    padding: 0 10px;
+    position: fixed;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 86px;  
+    text-align: center;
+    z-index: 9999999999;   
+    background: rgba(0,0,0,.5);    
+    -webkit-transition: bottom .3s ease-in-out 0s;
+       -moz-transition: bottom .3s ease-in-out 0s;
+        -ms-transition: bottom .3s ease-in-out 0s;
+         -o-transition: bottom .3s ease-in-out 0s;
+            transition: bottom .3s ease-in-out 0s;
+}
+
+#leca-system-global-notification.failed {
+	background: rgba(255,0,0,.7);
+}
+
+.leca-btn {
+	display: flex;
+    align-items: center;
+	font-size: 14px;
+	cursor: pointer;
+	padding: 0px 15px;
+    text-align: center;    
+    position: relative;    
+    margin-right: 5px !important;
+    border: solid 1px #007390;
+    -webkit-appearance: none;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+         -o-border-radius: 3px;
+            border-radius: 3px;
+}
+
+.leca-btn:active {
+	
+}
+
+.leca-btn.primary {
+	color: #fff;
+	background: #0085CA;
+	border: solid 1px #007390;	
+	-webkit-text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+       -moz-text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+        -ms-text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+         -o-text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+            text-shadow: 1px 1px 0 rgba(0,0,0,.3);
+}
+
+.leca-btn.primary:hover {
+	background: #31373d;
+	-webkit-text-shadow: none;
+       -moz-text-shadow: none;
+        -ms-text-shadow: none;
+         -o-text-shadow: none;
+            text-shadow: none;
+}
+
+.leca-btn.secondary  {
+	color: #676767;
+	background: #eee;
+    border: solid 1px #ccc;
+}
+
+.leca-btn.secondary:hover {
+	background: #ccc;
+}
+
+.leca-btn.warning {
+	color: #fff;
+	background: #d9534f;
+    border: solid 1px #d43f3a;
+}
+
+.leca-btn.warning:hover {
+	background: #c9302c;
+}
+
+.leca-action-btn {
+	height: 35px;
+}
+
+.leca-btn i {
+	font-size: 16px;
+}
+
+div.form-section {	
+	background: #fff;    
+    margin-bottom: 15px;
+    padding: 1px 20px 20px;
+}
+
+div.form-section input[type=text],
+div.form-section select,
+div.form-section textarea {
+	width: 100%;
+	height: 28px;
+	padding: 5px 10px;
+	border: solid 1px #ddd;
+}
+
+div.form-section h3 {	
+	margin-top: 16px;
+    font-size: 15px;
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: solid 3px #0085CA;
+}
+
+div.form-section div.leca-tab-content-container {
+	padding-top: 15px;	
+}
+
+#leca-report-ds-footer-section {
+	margin-top: 15px;
+	text-align: right;
+}
+
+.leca-tab-header {
+	height: 30px;
+	position: relative;
+}
+
+.leca-tab-header > a {
+	color: #555;
+	float: left;
+	height: 30px;   
+	font-size: 13px;
+	background: #ddd;
+	padding: 0px 20px;
+    line-height: 30px;
+	text-align: center;
+}
+
+.leca-tab-header > a.selected {
+	color: #fff;
+	background: #0085CA;
+}
+
+.leca-tab-header.disable > a {
+	color: #bbb;
+	cursor: default;
+	pointer-events: none;
+}
+
+.leca-tab-content-container {
+	
+}
+
+.leca-tab-content-container > div {
+	display: none;
+}
+
+div.leca-dashboard-chart-ds-config-row {
+	padding: 5px 0px;
+}
+div.form-row > label,
+div.leca-dashboard-chart-ds-config-row > label {
+	color: #4684EE;
+	display: block;	
+	font-size: 14px;
+	margin-bottom: 6px;
+}
+
+div.leca-dashboard-chart-ds-config-row select,
+div.leca-dashboard-chart-ds-config-row input[type=text],
+div.leca-dashboard-chart-ds-config-row input[type=number] {
+	width: 100%;
+	height: 30px;
+	padding: 0px 5px;
+	background: #fff;
+    border: solid 1px #ddd;
+}
+
+div.leca-report-config-form {
+	margin-top: 15px;
+}
+
+/* Model dialog css starts here */
+div.leca-model-dialog.leca-model-ghost-back {
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;	
+	display: flex;		
+	position: fixed;
+	z-index: 10000000000;
+	background: rgba(0,0,0,.5);
+}
+
+div.leca-dashboard-grp-config-model,
+div.leca-report-template-clone-model,
+div.leca-report-template-create-model {
+	width: 640px;
+    margin: auto;
+    display: block;
+	background: #fff;
+	position: relative;    
+}
+
+div.leca-report-template-clone-model {
+	width: 350px;
+}
+
+div.leca-dashboard-grp-config-model div.grp-model-header,
+div.leca-dashboard-grp-config-model div.grp-model-content,
+div.leca-dashboard-grp-config-model div.grp-model-footer,
+div.leca-report-template-clone-model div.leca-report-template-model-header,
+div.leca-report-template-clone-model div.leca-report-template-model-content,
+div.leca-report-template-clone-model div.leca-report-template-model-footer,
+div.leca-report-template-create-model div.leca-report-template-model-header,
+div.leca-report-template-create-model div.leca-report-template-model-content,
+div.leca-report-template-create-model div.leca-report-template-model-footer {
+	position: relative;
+}
+
+div.leca-dashboard-grp-config-model div.grp-model-content,
+div.leca-report-template-clone-model div.leca-report-template-model-content,
+div.leca-report-template-create-model div.leca-report-template-model-content {
+	padding: 10px;
+	font-size: 13px;
+}
+
+div.leca-report-template-clone-model div.leca-report-template-model-content {
+	padding: 0px 15px 22px;
+}
+
+div.leca-report-template-create-model div.leca-report-template-model-content {
+	padding-top: 0px;
+}
+
+div.leca-dashboard-grp-config-model div.grp-model-header h1,
+div.leca-report-template-clone-model div.leca-report-template-model-header h1,
+div.leca-report-template-create-model div.leca-report-template-model-header h1 {
+	margin: 0px;
+	height: 35px;
+    font-size: 15px;
+    padding: 0px 10px;    
+    line-height: 33px;
+    border-bottom: solid 1px #ccc;
+}
+
+div.leca-dashboard-grp-config-model div.grp-model-header a,
+div.leca-report-template-clone-model div.leca-report-template-model-header a,
+div.leca-report-template-create-model div.leca-report-template-model-header a {
+    top: 0px;
+    right: 0px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 35px;
+    text-align: center;
+    position: absolute;
+}
+
+div.leca-dashboard-grp-config-model div.grp-model-header a:hover,
+div.leca-report-template-clone-model div.leca-report-template-model-header a:hover,
+div.leca-report-template-create-model div.leca-report-template-model-header a:hover {
+	
+}
+
+div.grp-model-content div.group-config-grid,
+div.leca-report-template-create-model div.leca-report-template-model-grid {
+	display: grid;
+	padding: 10px;
+}
+
+div.grp-model-content div.group-config-grid.top-input {
+	grid-gap: 10px;
+    grid-template-columns: 3fr 1fr;
+}
+
+div.grp-model-content div.group-config-grid.middle-checks {
+	padding: 5px 10px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+div.grp-model-content div.group-config-grid.bottom-textarea {
+	grid-template-columns: 1fr;
+}
+
+div.leca-report-template-create-model div.leca-report-template-model-grid {
+	grid-gap: 15px;
+	padding: 0px 6px 6px;
+	grid-template-columns: 1fr 1fr;
+}
+
+div.group-config-grid-align-area {
+	padding: 10px;
+}
+
+div.group-config-grid-align-area label {
+	color: #999;
+	margin-bottom: 5px;
+}
+
+div.group-config-grid-align-area select {
+	width: 100%;
+	height: 28px;
+    padding: 0px 5px;
+    border: solid 1px #ddd;    
+}
+
+div.grp-model-content textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 5px;
+    display: block;
+    border: solid 1px #ddd;
+}
+
+div.grp-model-content select,
+div.grp-model-content input[type=text],
+div.grp-model-content input[type=number] {
+	width: 100%;
+	height: 28px;
+	padding: 0px 5px;
+	border: solid 1px #ddd;
+}
+
+div.grp-model-content label {
+	display: block;
+	margin: 5px 0px;
+	font-weight: bold;
+}
+
+div.grp-model-content label input[type=checkbox] {
+	float: left;
+    margin: 5px 5px 0px 0px;
+}
+
+div.leca-report-template-model-footer,
+div.leca-dashboard-grp-config-model div.grp-model-footer {
+	padding: 10px;
+	text-align: right;
+	display: flex;
+    flex-direction: row-reverse;
+	border-top: solid 1px #ccc;
+}
+
+div.leca-report-template-model-footer button,
+div.leca-dashboard-grp-config-model div.grp-model-footer button {
+	color: #fff;   
+    height: 35px;
+    border: none;
+    background: #0085CA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 15px;
+    cursor: pointer;
+}
+
+div.leca-report-template-model-footer button:hover,
+div.leca-dashboard-grp-config-model div.grp-model-footer button:hover {
+	color: #fff;
+	background: #0085CA;
+}
+
+div.leca-report-template-model-footer button i,
+div.leca-dashboard-grp-config-model div.grp-model-footer button i {
+	font-size: 16px;
+}
+
+/* Grid layout css starts here */
+
+.container-fluid {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.col, .col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.col, .col-xs-1, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9, .col-xs-10, .col-xs-11, .col-xs-12 {
+  float: left;
+}
+.col-xs-12 {
+  width: 100%;
+}
+.col-xs-11 {
+  width: 91.66666667%;
+}
+.col-xs-10 {
+  width: 83.33333333%;
+}
+.col-xs-9 {
+  width: 75%;
+}
+.col-xs-8 {
+  width: 66.66666667%;
+}
+.col-xs-7 {
+  width: 58.33333333%;
+}
+.col-xs-6 {
+  width: 50%;
+}
+.col-xs-5 {
+  width: 41.66666667%;
+}
+.col-xs-4 {
+  width: 33.33333333%;
+}
+.col-xs-3 {
+  width: 25%;
+}
+.col-xs-2 {
+  width: 16.66666667%;
+}
+.col-xs-1 {
+  width: 8.33333333%;
+}
+.col-xs-pull-12 {
+  right: 100%;
+}
+.col-xs-pull-11 {
+  right: 91.66666667%;
+}
+.col-xs-pull-10 {
+  right: 83.33333333%;
+}
+.col-xs-pull-9 {
+  right: 75%;
+}
+.col-xs-pull-8 {
+  right: 66.66666667%;
+}
+.col-xs-pull-7 {
+  right: 58.33333333%;
+}
+.col-xs-pull-6 {
+  right: 50%;
+}
+.col-xs-pull-5 {
+  right: 41.66666667%;
+}
+.col-xs-pull-4 {
+  right: 33.33333333%;
+}
+.col-xs-pull-3 {
+  right: 25%;
+}
+.col-xs-pull-2 {
+  right: 16.66666667%;
+}
+.col-xs-pull-1 {
+  right: 8.33333333%;
+}
+.col-xs-pull-0 {
+  right: auto;
+}
+.col-xs-push-12 {
+  left: 100%;
+}
+.col-xs-push-11 {
+  left: 91.66666667%;
+}
+.col-xs-push-10 {
+  left: 83.33333333%;
+}
+.col-xs-push-9 {
+  left: 75%;
+}
+.col-xs-push-8 {
+  left: 66.66666667%;
+}
+.col-xs-push-7 {
+  left: 58.33333333%;
+}
+.col-xs-push-6 {
+  left: 50%;
+}
+.col-xs-push-5 {
+  left: 41.66666667%;
+}
+.col-xs-push-4 {
+  left: 33.33333333%;
+}
+.col-xs-push-3 {
+  left: 25%;
+}
+.col-xs-push-2 {
+  left: 16.66666667%;
+}
+.col-xs-push-1 {
+  left: 8.33333333%;
+}
+.col-xs-push-0 {
+  left: auto;
+}
+.col-xs-offset-12 {
+  margin-left: 100%;
+}
+.col-xs-offset-11 {
+  margin-left: 91.66666667%;
+}
+.col-xs-offset-10 {
+  margin-left: 83.33333333%;
+}
+.col-xs-offset-9 {
+  margin-left: 75%;
+}
+.col-xs-offset-8 {
+  margin-left: 66.66666667%;
+}
+.col-xs-offset-7 {
+  margin-left: 58.33333333%;
+}
+.col-xs-offset-6 {
+  margin-left: 50%;
+}
+.col-xs-offset-5 {
+  margin-left: 41.66666667%;
+}
+.col-xs-offset-4 {
+  margin-left: 33.33333333%;
+}
+.col-xs-offset-3 {
+  margin-left: 25%;
+}
+.col-xs-offset-2 {
+  margin-left: 16.66666667%;
+}
+.col-xs-offset-1 {
+  margin-left: 8.33333333%;
+}
+.col-xs-offset-0 {
+  margin-left: 0%;
+}
+@media (min-width: 768px) {
+  .col, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    float: left;
+  }
+  .col-sm-12 {
+    width: 100%;
+  }
+  .col-sm-11 {
+    width: 91.66666667%;
+  }
+  .col-sm-10 {
+    width: 83.33333333%;
+  }
+  .col-sm-9 {
+    width: 75%;
+  }
+  .col-sm-8 {
+    width: 66.66666667%;
+  }
+  .col-sm-7 {
+    width: 58.33333333%;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .col-sm-5 {
+    width: 41.66666667%;
+  }
+  .col-sm-4 {
+    width: 33.33333333%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .col-sm-2 {
+    width: 16.66666667%;
+  }
+  .col-sm-1 {
+    width: 8.33333333%;
+  }
+  .col-sm-pull-12 {
+    right: 100%;
+  }
+  .col-sm-pull-11 {
+    right: 91.66666667%;
+  }
+  .col-sm-pull-10 {
+    right: 83.33333333%;
+  }
+  .col-sm-pull-9 {
+    right: 75%;
+  }
+  .col-sm-pull-8 {
+    right: 66.66666667%;
+  }
+  .col-sm-pull-7 {
+    right: 58.33333333%;
+  }
+  .col-sm-pull-6 {
+    right: 50%;
+  }
+  .col-sm-pull-5 {
+    right: 41.66666667%;
+  }
+  .col-sm-pull-4 {
+    right: 33.33333333%;
+  }
+  .col-sm-pull-3 {
+    right: 25%;
+  }
+  .col-sm-pull-2 {
+    right: 16.66666667%;
+  }
+  .col-sm-pull-1 {
+    right: 8.33333333%;
+  }
+  .col-sm-pull-0 {
+    right: auto;
+  }
+  .col-sm-push-12 {
+    left: 100%;
+  }
+  .col-sm-push-11 {
+    left: 91.66666667%;
+  }
+  .col-sm-push-10 {
+    left: 83.33333333%;
+  }
+  .col-sm-push-9 {
+    left: 75%;
+  }
+  .col-sm-push-8 {
+    left: 66.66666667%;
+  }
+  .col-sm-push-7 {
+    left: 58.33333333%;
+  }
+  .col-sm-push-6 {
+    left: 50%;
+  }
+  .col-sm-push-5 {
+    left: 41.66666667%;
+  }
+  .col-sm-push-4 {
+    left: 33.33333333%;
+  }
+  .col-sm-push-3 {
+    left: 25%;
+  }
+  .col-sm-push-2 {
+    left: 16.66666667%;
+  }
+  .col-sm-push-1 {
+    left: 8.33333333%;
+  }
+  .col-sm-push-0 {
+    left: auto;
+  }
+  .col-sm-offset-12 {
+    margin-left: 100%;
+  }
+  .col-sm-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .col-sm-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .col-sm-offset-9 {
+    margin-left: 75%;
+  }
+  .col-sm-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .col-sm-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .col-sm-offset-6 {
+    margin-left: 50%;
+  }
+  .col-sm-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .col-sm-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .col-sm-offset-3 {
+    margin-left: 25%;
+  }
+  .col-sm-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .col-sm-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .col-sm-offset-0 {
+    margin-left: 0%;
+  }
+}
+@media (min-width: 992px) {
+  .col, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: left;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+  .col-md-11 {
+    width: 91.66666667%;
+  }
+  .col-md-10 {
+    width: 83.33333333%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-8 {
+    width: 66.66666667%;
+  }
+  .col-md-7 {
+    width: 58.33333333%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-5 {
+    width: 41.66666667%;
+  }
+  .col-md-4 {
+    width: 33.33333333%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-2 {
+    width: 16.66666667%;
+  }
+  .col-md-1 {
+    width: 8.33333333%;
+  }
+  .col-md-pull-12 {
+    right: 100%;
+  }
+  .col-md-pull-11 {
+    right: 91.66666667%;
+  }
+  .col-md-pull-10 {
+    right: 83.33333333%;
+  }
+  .col-md-pull-9 {
+    right: 75%;
+  }
+  .col-md-pull-8 {
+    right: 66.66666667%;
+  }
+  .col-md-pull-7 {
+    right: 58.33333333%;
+  }
+  .col-md-pull-6 {
+    right: 50%;
+  }
+  .col-md-pull-5 {
+    right: 41.66666667%;
+  }
+  .col-md-pull-4 {
+    right: 33.33333333%;
+  }
+  .col-md-pull-3 {
+    right: 25%;
+  }
+  .col-md-pull-2 {
+    right: 16.66666667%;
+  }
+  .col-md-pull-1 {
+    right: 8.33333333%;
+  }
+  .col-md-pull-0 {
+    right: auto;
+  }
+  .col-md-push-12 {
+    left: 100%;
+  }
+  .col-md-push-11 {
+    left: 91.66666667%;
+  }
+  .col-md-push-10 {
+    left: 83.33333333%;
+  }
+  .col-md-push-9 {
+    left: 75%;
+  }
+  .col-md-push-8 {
+    left: 66.66666667%;
+  }
+  .col-md-push-7 {
+    left: 58.33333333%;
+  }
+  .col-md-push-6 {
+    left: 50%;
+  }
+  .col-md-push-5 {
+    left: 41.66666667%;
+  }
+  .col-md-push-4 {
+    left: 33.33333333%;
+  }
+  .col-md-push-3 {
+    left: 25%;
+  }
+  .col-md-push-2 {
+    left: 16.66666667%;
+  }
+  .col-md-push-1 {
+    left: 8.33333333%;
+  }
+  .col-md-push-0 {
+    left: auto;
+  }
+  .col-md-offset-12 {
+    margin-left: 100%;
+  }
+  .col-md-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .col-md-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .col-md-offset-9 {
+    margin-left: 75%;
+  }
+  .col-md-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .col-md-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .col-md-offset-6 {
+    margin-left: 50%;
+  }
+  .col-md-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .col-md-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .col-md-offset-3 {
+    margin-left: 25%;
+  }
+  .col-md-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .col-md-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .col-md-offset-0 {
+    margin-left: 0%;
+  }
+}
+@media (min-width: 1200px) {
+  .col, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: left;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+  .col-lg-11 {
+    width: 91.66666667%;
+  }
+  .col-lg-10 {
+    width: 83.33333333%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-8 {
+    width: 66.66666667%;
+  }
+  .col-lg-7 {
+    width: 58.33333333%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-5 {
+    width: 41.66666667%;
+  }
+  .col-lg-4 {
+    width: 33.33333333%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-2 {
+    width: 16.66666667%;
+  }
+  .col-lg-1 {
+    width: 8.33333333%;
+  }
+  .col-lg-pull-12 {
+    right: 100%;
+  }
+  .col-lg-pull-11 {
+    right: 91.66666667%;
+  }
+  .col-lg-pull-10 {
+    right: 83.33333333%;
+  }
+  .col-lg-pull-9 {
+    right: 75%;
+  }
+  .col-lg-pull-8 {
+    right: 66.66666667%;
+  }
+  .col-lg-pull-7 {
+    right: 58.33333333%;
+  }
+  .col-lg-pull-6 {
+    right: 50%;
+  }
+  .col-lg-pull-5 {
+    right: 41.66666667%;
+  }
+  .col-lg-pull-4 {
+    right: 33.33333333%;
+  }
+  .col-lg-pull-3 {
+    right: 25%;
+  }
+  .col-lg-pull-2 {
+    right: 16.66666667%;
+  }
+  .col-lg-pull-1 {
+    right: 8.33333333%;
+  }
+  .col-lg-pull-0 {
+    right: auto;
+  }
+  .col-lg-push-12 {
+    left: 100%;
+  }
+  .col-lg-push-11 {
+    left: 91.66666667%;
+  }
+  .col-lg-push-10 {
+    left: 83.33333333%;
+  }
+  .col-lg-push-9 {
+    left: 75%;
+  }
+  .col-lg-push-8 {
+    left: 66.66666667%;
+  }
+  .col-lg-push-7 {
+    left: 58.33333333%;
+  }
+  .col-lg-push-6 {
+    left: 50%;
+  }
+  .col-lg-push-5 {
+    left: 41.66666667%;
+  }
+  .col-lg-push-4 {
+    left: 33.33333333%;
+  }
+  .col-lg-push-3 {
+    left: 25%;
+  }
+  .col-lg-push-2 {
+    left: 16.66666667%;
+  }
+  .col-lg-push-1 {
+    left: 8.33333333%;
+  }
+  .col-lg-push-0 {
+    left: auto;
+  }
+  .col-lg-offset-12 {
+    margin-left: 100%;
+  }
+  .col-lg-offset-11 {
+    margin-left: 91.66666667%;
+  }
+  .col-lg-offset-10 {
+    margin-left: 83.33333333%;
+  }
+  .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+  .col-lg-offset-8 {
+    margin-left: 66.66666667%;
+  }
+  .col-lg-offset-7 {
+    margin-left: 58.33333333%;
+  }
+  .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+  .col-lg-offset-5 {
+    margin-left: 41.66666667%;
+  }
+  .col-lg-offset-4 {
+    margin-left: 33.33333333%;
+  }
+  .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+  .col-lg-offset-2 {
+    margin-left: 16.66666667%;
+  }
+  .col-lg-offset-1 {
+    margin-left: 8.33333333%;
+  }
+  .col-lg-offset-0 {
+    margin-left: 0%;
+  }
+}
+.clearfix,
+.clearfix:before,
+.clearfix:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.container:after,
+.container-fluid:after,
+.row:after {
+  clear: both;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}

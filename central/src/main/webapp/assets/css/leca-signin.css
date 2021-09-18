@@ -1,0 +1,282 @@
+/* CSS reset section start */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+nav,
+menu,
+aside,
+figure,
+footer,
+header,
+hgroup,
+article,
+details,
+section,
+figcaption { 
+    display:block;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a, a:hover {
+	text-decoration: none;
+}
+
+a, a:visited {
+    color: inherit;
+}
+
+*:before, *:after {
+    box-sizing: inherit;
+}
+
+table {
+	width: 100%;
+	border-spacing: 0;
+    border-collapse: collapse;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+img, video {
+    max-width: 100%;
+}
+
+img {
+    border-style: none;
+}
+
+::-moz-selection {
+	background-color: #b3d4fc; /* 1 */
+	color: #000000; /* 1 */
+	text-shadow: none;
+}
+
+::selection {
+	background-color: #b3d4fc; /* 1 */
+	color: #000000; /* 1 */
+	text-shadow: none;
+}
+
+input,
+select,
+button {
+    outline: none;
+    border: none;
+}
+
+body {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";	
+}
+
+body {
+    color: #73879C; 
+    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif;   
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+
+/* CSS reset section end */
+
+@font-face {
+  	font-family: 'Material Icons';
+  	font-style: normal;
+  	font-weight: 400;
+  	src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+  	src: local('Material Icons'),
+    	 local('MaterialIcons-Regular'),
+    	 url(../font/MaterialIcons-Regular.woff2) format('woff2'),    	
+    	 url(../font/MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  	font-family: 'Material Icons';
+  	font-weight: normal;
+  	font-style: normal;
+  	font-size: 24px;  /* Preferred icon size */
+  	display: inline-block;
+  	line-height: 1;
+  	text-transform: none;
+  	letter-spacing: normal;
+  	word-wrap: normal;
+  	white-space: nowrap;
+  	direction: ltr;
+  	/* Support for all WebKit browsers. */
+  	-webkit-font-smoothing: antialiased;
+  	/* Support for Safari and Chrome. */
+  	text-rendering: optimizeLegibility;
+  	/* Support for Firefox. */
+  	-moz-osx-font-smoothing: grayscale;
+  	/* Support for IE. */
+  	font-feature-settings: 'liga';
+}
+
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #0085CA;
+    border-color: #0085CA;
+}
+
+div.leca-master-container {
+	width: 100%;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;  
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-login {
+	width: 100%;
+	height: 40px;
+    border-radius: 20px;
+}
+
+body.signin div.leca-master-container {
+	background: #0085CA;   
+}
+
+div.leca-login-form-container {
+	width: auto;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+div.leca-left-part {
+	display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+div.leca-brand-logo-container {
+	width: 316px;
+	margin: 0 auto;
+}
+
+div.leca-right-part form > h3 {
+	font-size: 24px;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding-bottom: 5px;
+    font-weight: bold;
+}
+
+div.leca-form-row {
+	margin: 15px 0px;
+}
+
+div.leca-input-wrapper {	
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666;
+    display: block;
+    width: 100%;
+    background: #e6e6e6;    
+    border-radius: 25px;
+    padding: 0px 20px 0px 40px;	
+    position: relative;
+}
+
+div.leca-input-wrapper i {
+	font-size: 22px;
+}
+
+div.leca-input-wrapper input,
+div.leca-input-wrapper select {
+	width: 100%;
+	border: none;
+	height: 40px;
+	padding: 0px 10px;
+	background: #e6e6e6;
+}
+
+div.leca-input-wrapper > span {
+	font-size: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 15px;
+    pointer-events: none;
+    color: #666;
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    -moz-transition: all .4s;
+    transition: all .4s;
+}
+
+div.leca-validation-message {
+	text-align: center;
+	font-size: 13px;
+	color: #dc3545;
+	display: none;
+}
